@@ -206,41 +206,6 @@ public boolean isPalindrome(String s) {
 }
 
 
-// Length of Last Word
-public int lengthOfLastWord(String s) {
-    char[] cArray = s.trim().toCharArray();   
-    int countLastWord = 0;
-
-    for(int i = 0; i < cArray.length; i++) {
-	if(cArray[i] != ' ') {
-	    countLastWord++;              
-	} else {              
-	    countLastWord = 0;
-	}
-    }
-        
-    return countLastWord;
-}
-
-public int lengthOfLastWord(String s) {
-    char[] cArray = s.toCharArray();
-    int sLen = s.length();
-    int countLastWord = 0;
-
-    for(int i = sLen-1; i >= 0; i--) {
-	if(cArray[i] != ' ') {
-	    countLastWord++;              
-	} else if(cArray[i] == ' ' && countLastWord > 0){
-	    break;
-	} else {
-	    countLastWord = 0;
-	}
-    }
-        
-    return countLastWord;
-}
-
-
 // add Binary
 public String addBinary(String a, String b) {
     boolean carry = false;
@@ -1150,28 +1115,4 @@ public int divide(int dividend, int divisor) {
             
 	return neg ? -result : result;        
     }   
-}
-
-// Integer to Roman
-
-public void setZeroes(int[][] matrix) {
-    boolean zeroFRow = false;
-    boolean zeroFCol = false;
-    int rowLen = matrix.length;
-    int colLen = matrix[0].length;
-        
-    // Check if first row needs to be zeroed
-    for(int i = 0; i < colLen; i++) {
-	if(matrix[0][i] == 0) {
-	    zeroFRow = true;
-	    break;
-	}
-    }
-        
-    for(int i = 0; i < rowLen; i++) {
-	if(matrix[i][0] == 0) {
-	    zeroFCol = true;
-	    break;
-	}                
-    }
 }
