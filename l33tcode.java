@@ -191,20 +191,6 @@ public static String preProcess(String s) {
 }
 
 
-// Valid Palindrome
-public boolean isPalindrome(String s) {
-    s = s.toLowerCase().replaceAll("[^a-z0-9]","");
-    char[] temp1 = s.toCharArray();
-    char[] temp2 = s.toCharArray();
-    int sLen = s.length();
-        
-    for(int i = 0, j = sLen-1; i < sLen/2; i++, j--){
-	if(temp1[i] != temp2[j]) return false;            
-    }
-        
-    return true;
-}
-
 
 // add Binary
 public String addBinary(String a, String b) {
